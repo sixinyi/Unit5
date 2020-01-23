@@ -1,14 +1,12 @@
-package com.company;
-
 public class Square {
     private double side;
 
-    public Square(double s){
-        side = s;
+    public Square(double a){
+        side = a;
     }
 
     public double calculateArea(){
-        return side*side;
+        return side * side;
     }
 
     public String toString(){
