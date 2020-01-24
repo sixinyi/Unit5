@@ -59,7 +59,7 @@ public class Student
         //add body of printName
         return name;
     }
-
+////////////////////////////////////////////这个地方有问题 printname没有link
     public String toString(){
         return "Name: "+ name + " \n" + "Test1: " + test1 + "\n"+"Test2: "+ test2;
     }
