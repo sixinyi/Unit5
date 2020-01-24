@@ -7,8 +7,9 @@ public class Item {
     Item (double p, String n, String d) {
 
         price = p;
-        des = d;
         num = n;
+        des = d;
+
         if(price < 0){
             price = 0;
 
