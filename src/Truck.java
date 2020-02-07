@@ -9,15 +9,15 @@ public class Truck {
     private static final double CAPACITY = 20;
     private static double totalFuel;
 
-    public Truck(String name){
-        truckID = name;
+    public Truck(String tid){
+        truckID = tid;
     }
 
-    public Truck(String name, double odo, double m, double fue){
-        truckID = name;
-        odometer = odo;
-        mpg = m;
-        fuel = fue;
+    public Truck(String tid, double odm, double mg, double gas){
+        truckID = tid;
+        odometer = odm;
+        mpg = mg;
+        fuel = gas;
     }
 
     public String getTruckID() {return truckID;}
@@ -25,15 +25,16 @@ public class Truck {
     public double getMpg() {return mpg;}
     public double getFuel() {return fuel;}
 
-    //////下面的要改
 
-    public void setMpg(double mpg) {
-        this.mpg = mpg;
+
+    public void setMpg(double nmg) {
+        mpg = nmg;
     }
 
-    private boolean enoughFuel(double mile){
-        double need = mile/mpg;
-        if(fuel < need){
+    public boolean enoughFuel(double mi){
+        double want = mi/mpg;
+
+        if(fuel < want){
             return false;
         }
         else{
@@ -52,29 +53,20 @@ public class Truck {
             return "Truck " + truckID + " does not have enough fuel to drive 500.0 miles.";
         }
     }
-        /*
-        odometer += runMile;
-        fuel -= runMile / mpg;
-        if(fuel + runMile / mpg < runMile / mpg){
-            return "Truck " + truckID + " does not have enough fuel to drive 500.0 miles.";
-        }
-        else{
-            return "success";
-        }
 
-         */
 
     public void fill(){
-        totalFuel += (CAPACITY-fuel);
-        fuel = 20;
+        totalFuel += (CAPACITY - fuel);
+        fuel = CAPACITY;//原来这里是=20
     }
 
-    public String fill(double f){
-        if(totalFuel <= 20){
-            fuel += f;
-            totalFuel += f;
+    public String fill(double gas){
+        if(fuel + gas <= CAPACITY){//原本totalFuel 《=
+            fuel += gas;
+            totalFuel += gas;
             return "success";
-        }else{
+        }
+        else{
             return "Truck " + truckID + ": Gallons exceeds tank capacity";
         }
     }
