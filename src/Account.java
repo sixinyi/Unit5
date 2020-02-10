@@ -7,20 +7,20 @@ public class Account {
     private double balance;
 
     public Account (String first,String last,double balance) {
-        acctNum = (int) (Math.random() * 999 + 1);
         this.first = first;
         this.last = last;
         this.balance = balance;
+        acctNum = (int) (Math.random() * 999 + 1);
     }
 
     public Account(Account recall){
         this(recall.first,recall.last,recall.balance);
     }
     public Account(){
-        acctNum = (int)(Math.random()*999+1);
         this.first = "";
         this.last = "";
         this.balance = 0;
+        acctNum = (int)(Math.random() * 999 + 1);
     }
 
     public void setFirst(String first){
