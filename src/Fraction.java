@@ -76,10 +76,10 @@ public class Fraction {
         newDenominator /= num;
         newNumerator /= num;
         if (newDenominator < 0 && newNumerator > 0) {
-            newDenominator *= -1;
-            newNumerator *= -1;
+            newDenominator = -newDenominator;
+            newNumerator = -newNumerator;
         } else if (newDenominator < 0 && newNumerator < 0)
-            newDenominator *= -1;
+            newDenominator = -newDenominator;
         return new Fraction(newNumerator, newDenominator);
     }
     /**
